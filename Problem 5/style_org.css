@@ -1,0 +1,36 @@
+/*
+Särskilda instruktioner:
+1) HTML-filen ska inte ändras alls.
+2) Ni kan ändra bäst ni vill i CSS-koden nedan så länge ni följer 
+   instruktionerna ovan.
+*/
+
+body > div {
+  display: flex;
+  width: 75vh;
+  height: 45vh;
+}
+
+body>div>div {
+  flex-basis: 1px;
+  flex-grow: 1;
+  background-color: black;
+}
+
+body>div>div:last-child > div:nth-child(1) { background-image: url(images/janis.jpg) }
+body>div>div:first-child > div:nth-child(1) { background-image: url(images/jimi.jpg) }
+
+body>div>div:first-child > div:nth-child(1), body>div>div:last-child > div:nth-child(1) {
+  background-size: cover;
+  background-position: top;  
+}
+
+body>div>div:first-child > div:nth-child(2), body>div>div:last-child > div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+body>div>div:first-child:hover > div:nth-child(1) { height: 100%; }
+body>div>div:last-child:hover > div:nth-child(1) { height: 100%; }

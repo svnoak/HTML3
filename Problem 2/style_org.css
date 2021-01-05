@@ -1,0 +1,75 @@
+/*
+Särskilda instruktioner:
+1) Inne i body finns CSS-variablen "--size".
+   Ni måste använda den för att lösa problemet.
+   Ni får inte använda "px" på någon annan rad i hela koden.
+2) HTML-filen ska inte ändras alls.
+3) Ni kan ändra bäst ni vill i CSS-koden nedan så länge ni följer 
+   instruktionerna ovan.
+*/
+
+body {
+  margin: 0px;
+  font-family: "Bebas Neue";
+  --size: 100px;
+  --opac: 0.25;
+}
+
+div {
+  /* Alla divvar ska ha storlek 100px x 100px */
+  width: var(--size);
+  height: var(--size);
+}
+
+body > div {
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 1fr;
+  grid-template-rows: var(--size) var(--size);
+}
+
+body > div > div {
+  /* Font-size ska vara 100px */
+  font-size: var(--size);
+  grid-area: 2 / 1 / 3 / 2;
+  color: white;
+  
+  background-size: cover;
+}
+
+body > div > div:first-child {
+  font-size: 30px;
+  opacity: 1;
+  background-color: black;
+}
+
+body > div > div:nth-child(2) {background-image: url(bilder/image_01.jpg);}
+body > div > div:nth-child(3) {background-image: url(bilder/image_02.jpg);}
+body > div > div:nth-child(4) {background-image: url(bilder/image_03.jpg);}
+body > div > div:nth-child(5) {background-image: url(bilder/image_04.jpg);}
+body > div > div:nth-child(6) {background-image: url(bilder/image_05.jpg);}
+
+/* Reglerna nedan ska fixa separationen av bilderna.
+   De använder margin-left för att flytta på elementen.
+   Det går att också lösa med position:relative; och left men jag tror inte det blir lättare.
+*/
+selector { margin-left: ?; }
+selector { margin-left: ?; }
+selector { margin-left: ?; }
+selector { margin-left: ?; }
+
+
+
+/* TOGETHER / APART */
+span {
+  transition: opacity var(--time);
+}
+selector {
+  margin-right: 10px;
+}
+selector {
+  opacity: var(--opac);
+}
+
+body > div > div:first-child:hover span:last-child { opacity: 1; }
+body > div > div:first-child:hover span:first-child { opacity: var(--opac); }

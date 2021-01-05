@@ -1,0 +1,63 @@
+/*
+Särskilda instruktioner:
+1) HTML-filen ska inte ändras alls.
+2) Ni kan ändra bäst ni vill i CSS-koden nedan så länge ni följer 
+   instruktionerna ovan.
+*/
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body > div {
+  display: flex;
+  width: 75vh;
+  height: 45vh;
+}
+
+body > div > div {
+	flex-basis: 1px;
+	flex-grow: 1;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+body > div > div:last-child > div:nth-child(1) { 
+  background-image: url(images/janis.jpg); 
+}
+
+
+body > div > div:first-child > div:nth-child(1) { 
+  background-image: url(images/jimi.jpg); 
+}
+
+body > div > div:first-child > div:nth-child(1), 
+body > div > div:last-child > div:nth-child(1) {
+	background-size: cover;
+	background-position: top;
+  height: 0%;
+	width: 100%;
+  transition: 1s;
+}
+
+body > div > div:first-child > div:nth-child(2), 
+body > div > div:last-child > div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: pink;
+  font-family: "Bebas Neue";
+  font-size: 50px;
+
+}
+
+body > div > div:first-child:hover > div:nth-child(1),
+body > div > div:last-child:hover > div:nth-child(1) { 
+  height: 100%;
+}

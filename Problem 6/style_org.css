@@ -1,0 +1,45 @@
+/*
+Särskilda instruktioner:
+1) Inne i :root finns CSS-variablen "--t".
+   Ni måste använda den för att lösa problemet.
+   Ni får inte använda "s" (som i sekunder) på någon annan rad i hela koden.
+2) HTML-filen ska inte ändras alls.
+3) Ni kan ändra bäst ni vill i CSS-koden nedan så länge ni följer 
+   instruktionerna ovan.
+*/
+
+:root {
+  --t: .5s;
+}
+
+body {
+  margin: 0px;
+  height: 100vh;
+  font: 6vh "Bebas Neue";
+
+  display: flex;
+  align-items: center;
+}
+
+body div div div div {
+  height: 15vh;
+  width: 15vh;
+}
+
+div {
+  padding: 4vh;
+}
+
+body > div > div > div > div {
+  background-color: antiquewhite;
+}
+body > div > div > div {
+  background-color: black;
+}
+body > div > div {
+  background-color: antiquewhite;
+}
+body > div {
+  background-color: black;
+  border: 2vh solid transparent;
+}

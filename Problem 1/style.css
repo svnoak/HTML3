@@ -1,0 +1,98 @@
+/*
+Färger som används i videon:
+black, whitesmoke, gold 
+*/
+
+/*
+Särskilda instruktioner:
+1) Ni får inte ändra de var(--X) som finns i koden nedan.
+   Ni måste komplettera koden så att de CSS-variabler som
+   finns "fungerar".
+2) HTML-filerna får ej ändras.
+3) Ni kan ändra bäst ni vill i CSS-koden nedan så länge ni följer 
+   instruktionerna ovan.
+*/
+
+:root {
+  --tTime: 1s;
+  --color1: black;
+  --color2: white;
+  --color3: yellow;
+}
+
+
+* {
+  transition: background-color var(--tTime),
+              color var(--tTime),
+              border-color var(--tTime);
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: var(--color2);
+}
+
+body {
+  margin: 0px;
+  font-size: 20px;
+  font-family: 'Roboto Condensed';
+  background-color: var(--color1);
+  color: var(--color2);
+}
+
+body > div:first-child {
+  font-family: "Bebas Neue";
+  font-size: 30px;
+  display: flex;
+  height: 90px;
+}
+
+body > div span,
+a {
+  flex-basis: 1px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--color2);
+  margin: 0;
+}
+
+a:hover {
+  background-color: var(--color2);
+  color: var(--color1);
+}
+
+body > div:first-child > :first-child {
+  border-right: 1px solid var(--color2);
+}
+
+body > div > span,
+body > div > a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 50px;
+}
+
+body > div > div:first-child {
+  color: var(--color3);
+  font-family: "Bebas Neue";
+  font-size: 60px;
+}
+
+body > div:nth-child(2) {
+  margin: 30px 50px;
+}
+
+body > div:nth-child(2) > div {
+  margin: 20px 0px;
+}@
+
+@media (max-width: 900px) {
+  body {
+    --color1: azure;
+    --color2: black;
+    --color3: brown;
+  }
+}

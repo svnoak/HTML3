@@ -1,0 +1,51 @@
+/*
+Särskilda instruktioner:
+1) HTML-filen ska inte ändras alls. Notera att span-elementen
+   har classer. Ni kan använda dem i CSS-koden.
+2) Ni kan ändra bäst ni vill i CSS-koden nedan så länge ni följer 
+   instruktionerna ovan.
+*/
+
+body {
+  height: 100vh;
+  margin: 0px;
+  font: 10vh 'Bebas Neue';  
+  color: hotpink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body > div {
+  display: flex;
+  width: 600px;
+  height: 50vh;
+  display: flex;
+}
+
+body > div > div {
+  flex-basis: 1px;
+  flex-grow: 1;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s, border-radius 3s;
+}
+
+.on {
+  display: none;
+}
+
+body > div > div:hover {
+  background-color: greenyellow;
+  border-radius: 50px;
+}
+
+body > div > div:hover > span:nth-child(2) {
+  display: block;
+}
+
+body > div > div:hover > span:nth-child(1) {
+  display: none;
+}

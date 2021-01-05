@@ -1,0 +1,62 @@
+/*
+Särskilda instruktioner:
+1) Inne i :root finns CSS-variablen "--t".
+   Ni måste använda den för att lösa problemet.
+   Ni får inte använda "s" (som i sekunder) på någon annan rad i hela koden.
+2) Ni får heller inte använda någon unit av storlek (vh, vw, px, etc)
+   i någon annan rad än där de redan finns.
+3) HTML-filen ska inte ändras alls.
+4) Ni kan ändra bäst ni vill i CSS-koden nedan så länge ni följer 
+   punkterna 1) och 2) ovan.
+*/
+
+:root {
+  --sz: 100vh;
+  --fSz: calc(.1 * var(--sz));
+  --lSz: calc(.9 * var(--sz));
+  --t: 1s;
+}
+
+* {
+  margin: 0px;
+  font: var(--sz) 'Bebas Neue';  
+  color: hotpink;
+}
+
+body {
+  height: var(--sz);
+}
+
+body > div {
+  width: var(--lSz);
+  height: var(--lSz);
+  display: grid;
+  grid-template-columns: ?;
+  grid-template-rows: ?;
+  background-image: url(images/janis_bw.jpg)
+}
+
+div {
+  background-size: cover;
+  background-position: center;
+  
+  transition: ? var(--t), color ?;
+}
+
+body > div > div:nth-child(1) { grid-area: 1 / 1 / 2 / 2;}
+body > div > div:nth-child(2) { grid-area: 1 / 1 / 2 / 3;}
+
+body > div > div:nth-child(1) {
+  opacity: 0;
+  background-image: url(images/janis.jpg);
+}
+
+body > div > div:nth-child(2) {
+  z-index:100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body > div:hover div:nth-child(2) { color: transparent; }
+body > div:hover div:nth-child(1) { opacity: 1; }
